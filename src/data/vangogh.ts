@@ -403,15 +403,14 @@ export const timeline: TimelineEvent[] = [
 ];
 
 export const audioOptions = [
-  { id: 'wheat-wind', name: 'Wheat Field Wind', file: 'wheat-wind.mp3' },
+  { id: 'wheat-wind', name: 'Wheat Field Wind', file: 'wheat-field-wind.mp3' },
   { id: 'field-birds', name: 'Field Birds', file: 'field-birds.mp3' },
-  { id: 'insects', name: 'Distant Insects', file: 'insects.mp3' },
-  { id: 'faint-bell', name: 'Faint Bell', file: 'faint-bell.mp3' },
-  { id: 'palette-scraping', name: 'Palette Scraping', file: 'palette-scraping.mp3' },
-  { id: 'chair-moving', name: 'Chair Moving', file: 'chair-moving.mp3' },
+  { id: 'insects', name: 'Distant Insects', file: 'distant-insects.mp3' },
+  { id: 'palette-scraping', name: 'Palette Knife', file: 'palette-knife.mp3' },
+  { id: 'chair-moving', name: 'Chair Move', file: 'chair-move.mp3' },
   { id: 'church-bell', name: 'Church Bell', file: 'church-bell.mp3' },
-  { id: 'carriage', name: 'Carriage', file: 'carriage.mp3' },
-  { id: 'farm-labor', name: 'Farm Labor', file: 'farm-labor.mp3' },
-  { id: 'cafe-clash', name: 'Cafe Clashing', file: 'cafe-clash.mp3' },
+  { id: 'carriage', name: 'Carriage Passing', file: 'carriage-passing.mp3' },
+  { id: 'farm-labor', name: 'Farmers Working', file: 'farmers-working.mp3' },
+  { id: 'cafe-clash', name: 'Cafe Ambience', file: 'cafe-ambience.mp3' },
 ];
 
