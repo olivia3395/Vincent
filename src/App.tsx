@@ -318,16 +318,23 @@ export default function App() {
 
       {/* Hero (Only on Home) */}
       {activeSection === 'Home' && (
-        <main className="relative h-screen w-full overflow-hidden flex flex-col justify-center p-12">
-          {/* Image Background */}
-          <div 
-            className="absolute inset-0 w-full h-full bg-cover bg-center z-0" 
-            style={{ backgroundImage: "url('/bg2.jpg')" }}
-          ></div>
+        <main className="relative h-screen w-full flex flex-col">
+          {/* Background container to hold split images */}
+          <div className="absolute inset-0 z-0 flex flex-col">
+            <div 
+              className="w-full h-1/2 bg-cover bg-center" 
+              style={{ backgroundImage: "url('/bg.jpg')" }}
+            ></div>
+            <div 
+              className="w-full h-1/2 bg-cover bg-center" 
+              style={{ backgroundImage: "url('/bg2.jpg')" }}
+            ></div>
+          </div>
+
           {/* Overlay to ensure readability */}
-          <div className="absolute inset-0 bg-[#0a0c10]/40 z-0"></div>
+          <div className="absolute inset-0 bg-[#0a0c10]/40 z-10"></div>
           
-          <div className="absolute top-[20%] left-[8%] z-10">
+          <div className="absolute top-[20%] left-[8%] z-20">
             <p className="text-[12px] uppercase tracking-[0.5em] text-yellow-500 mb-4 font-sans font-bold">The Visionary</p>
             <h1 className="text-[120px] leading-[0.9] mb-8 select-none font-serif font-light text-white">
               Vincent<br/><span className="italic opacity-70">van Gogh</span>
