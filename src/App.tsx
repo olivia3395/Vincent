@@ -279,16 +279,11 @@ export default function App() {
       {/* Hero (Only on Home) */}
       {activeSection === 'Home' && (
         <main className="relative h-screen w-full overflow-hidden flex flex-col justify-center p-12">
-          {/* Video Background */}
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          >
-            <source src="/vangogh.mp4" type="video/mp4" />
-          </video>
+          {/* Image Background */}
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center z-0" 
+            style={{ backgroundImage: "url('/starry-night.jpg')" }}
+          ></div>
           {/* Overlay to ensure readability */}
           <div className="absolute inset-0 bg-[#0a0c10]/40 z-0"></div>
           
