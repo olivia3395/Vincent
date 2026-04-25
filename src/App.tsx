@@ -322,7 +322,7 @@ export default function App() {
           {/* Image Background */}
           <div 
             className="absolute inset-0 w-full h-full bg-cover bg-center z-0" 
-            style={{ backgroundImage: "url('/bg.jpg')" }}
+            style={{ backgroundImage: "url('/bg2.jpg')" }}
           ></div>
           {/* Overlay to ensure readability */}
           <div className="absolute inset-0 bg-[#0a0c10]/40 z-0"></div>
