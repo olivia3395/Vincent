@@ -92,14 +92,6 @@ export default function App() {
 
   const renderContent = () => {
     switch (activeSection) {
-      // ... (Home and Bio remain same)
-      case 'Home':
-        return (
-          <div className="p-12 text-center flex flex-col items-center justify-center min-h-[60vh]">
-            <motion.h2 initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.5}} className="text-6xl mb-6">Welcome to Vincent's Archive</motion.h2>
-            <p className="max-w-2xl text-xl text-[#f5f5f0]/70">Explore the life, works, and letters of a true visionary.</p>
-          </div>
-        );
       case 'Biography':
         return (
           <div className="text-[#0a0c10] min-h-screen">
@@ -334,14 +326,9 @@ export default function App() {
           {/* Overlay to ensure readability */}
           <div className="absolute inset-0 bg-[#0a0c10]/40 z-10"></div>
           
-          <div className="absolute top-[20%] left-[8%] z-20">
-            <p className="text-[12px] uppercase tracking-[0.5em] text-yellow-500 mb-4 font-sans font-bold">The Visionary</p>
-            <h1 className="text-[120px] leading-[0.9] mb-8 select-none font-serif font-light text-white">
-              Vincent<br/><span className="italic opacity-70">van Gogh</span>
-            </h1>
-            <div className="backdrop-blur-md bg-white/5 border border-white/10 p-8 rounded-sm w-[420px]">
-              <p className="text-md leading-relaxed text-white/90 font-serif italic text-lg">"{biography.summary.substring(0, 150)}..."</p>
-            </div>
+          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-12 text-center">
+            <motion.h2 initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.5}} className="text-6xl mb-6 text-white">Welcome to Vincent's Archive</motion.h2>
+            <p className="max-w-2xl text-xl text-[#f5f5f0]/70">Explore the life, works, and letters of a true visionary.</p>
           </div>
         </main>
       )}
