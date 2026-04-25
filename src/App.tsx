@@ -337,6 +337,9 @@ export default function App() {
       <section className="max-w-6xl mx-auto z-20 relative">
         {renderContent()}
       </section>
+      <footer className="fixed bottom-4 left-4 text-[#f5f5f0]/30 text-[10px] tracking-widest font-sans z-[60]">
+        © {new Date().getFullYear()} Yuyao Wang | yuyaow@bu.edu
+      </footer>
     </div>
   );
 }
