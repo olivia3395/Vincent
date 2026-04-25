@@ -70,12 +70,17 @@ export default function App() {
         );
       case 'Biography':
         return (
-          <div className="p-12 text-[#f5f5f0]/80 min-h-[60vh] flex flex-col justify-center relative">
-            <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: "url('/vangogh_room.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-            <div className="relative z-10 p-12 bg-[#0a0c10]/70 backdrop-blur-sm">
-              <h2 className="text-4xl text-white mb-6">Biography</h2>
+          <div className="text-[#0a0c10] min-h-screen">
+            {/* Biography Image at Top (Full Width) */}
+            <div className="w-full h-[50vh] overflow-hidden">
+              <img src="/vangogh_room.jpg" alt="Van Gogh's Room" className="w-full h-full object-cover" />
+            </div>
+            
+            {/* Biography Content below the image */}
+            <div className="p-12 bg-[#f5f5f0]">
+              <h2 className="text-4xl font-bold mb-6">Biography</h2>
               <p className="text-lg leading-relaxed mb-6">{biography.summary}</p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 list-disc list-inside">
                 {biography.keyDetails.map((detail, i) => <li key={i}>{detail}</li>)}
               </ul>
             </div>
@@ -175,7 +180,6 @@ export default function App() {
                   </button>
                 ))}
               </div>
-              <p className="mt-4 text-[10px] text-[#f5f5f0]/50 italic">Note: Please place your .mp3 audio files in the <code className="bg-white/10 px-1 py-0.5">/public/sounds/</code> directory and name them accordingly (e.g., <code className="bg-white/10 px-1 py-0.5">wheat-wind.mp3</code>).</p>
             </div>
             <textarea 
               value={letter} 
