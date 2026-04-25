@@ -10,29 +10,38 @@ export default function App() {
   const [loadingReply, setLoadingReply] = useState(false);
   const [selectedSound, setSelectedSound] = useState<string | null>(null);
   const [audioPlayer, setAudioPlayer] = useState<HTMLAudioElement | null>(null);
+  const [vincentAudio, setVincentAudio] = useState<HTMLAudioElement | null>(null);
+  const [musicPlaying, setMusicPlaying] = useState(false);
 
-  // Fade-in audio on mount
+  // Initialize Vincent audio
   useEffect(() => {
     const audio = new Audio('/vincent.mp3');
-    audio.volume = 0;
     audio.loop = true;
-
-    const fadeIn = () => {
-      if (audio.volume < 1) {
-        audio.volume = Math.min(1, audio.volume + 0.05);
-        setTimeout(fadeIn, 200);
-      }
-    };
-
-    audio.play().then(() => {
-      fadeIn();
-    }).catch(err => console.log("Autoplay blocked or failed:", err));
-
+    setVincentAudio(audio);
     return () => {
       audio.pause();
-      audio.src = "";
     };
   }, []);
+
+  const toggleMusic = () => {
+    if (vincentAudio) {
+      if (musicPlaying) {
+        vincentAudio.pause();
+      } else {
+        vincentAudio.volume = 0;
+        vincentAudio.play();
+        // Fade in
+        const fade = setInterval(() => {
+          if (vincentAudio.volume < 1) {
+            vincentAudio.volume = Math.min(1, vincentAudio.volume + 0.05);
+          } else {
+            clearInterval(fade);
+          }
+        }, 200);
+      }
+      setMusicPlaying(!musicPlaying);
+    }
+  };
 
   const playSound = (audioId: string) => {
     if (audioPlayer) {
@@ -298,6 +307,14 @@ export default function App() {
           <div className="w-4 h-[1px] bg-white"></div>
         </div>
       </nav>
+
+      {/* Music Toggle Button */}
+      <button 
+        onClick={toggleMusic}
+        className="fixed bottom-6 right-6 z-[60] w-12 h-12 rounded-full bg-yellow-500/20 backdrop-blur-md border border-yellow-500/50 flex items-center justify-center text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all"
+      >
+        {musicPlaying ? 'Pause' : 'Play'}
+      </button>
 
       {/* Hero (Only on Home) */}
       {activeSection === 'Home' && (
